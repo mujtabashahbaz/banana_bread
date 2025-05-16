@@ -80,6 +80,45 @@
       margin: 0 auto;
     }
 
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .carousel-controls button {
+      background: var(--chocolate);
+      color: white;
+      border: none;
+      margin: 0 0.25rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .carousel-controls button:hover {
+      background: #3e2a1b;
+    }
+
     .product {
       display: flex;
       flex-wrap: wrap;
@@ -169,6 +208,17 @@
     <p>Freshly baked banana bread made with ripe bananas, love, and Savera’s signature touch – right here in Islamabad.</p>
   </section>
 
+  <section class="carousel" id="carousel">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" class="active" alt="Classic Banana Bread">
+    <img src="https://images.unsplash.com/photo-1598373182133-36ce0c69c729" alt="Walnut Banana Bread">
+    <img src="https://images.unsplash.com/photo-1606755962773-61ec6c2ac77b" alt="Banana Bread Slices">
+
+    <div class="carousel-controls">
+      <button onclick="prevSlide()">‹ Prev</button>
+      <button onclick="nextSlide()">Next ›</button>
+    </div>
+  </section>
+
   <section id="product" class="product">
     <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Banana Bread Loaf">
     <div class="product-details">
@@ -213,7 +263,7 @@
       });
     });
 
-    // Contact form handler
+    // Contact form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
@@ -230,6 +280,29 @@
         msgBox.style.color = "red";
       }
     });
+
+    // Carousel logic
+    const slides = document.querySelectorAll('.carousel img');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === i);
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    // Auto slide every 5 seconds
+    setInterval(nextSlide, 5000);
   </script>
 </body>
 </html>
