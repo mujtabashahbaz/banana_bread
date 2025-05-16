@@ -23,7 +23,7 @@
 
     header {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                  url('https://images.unsplash.com/photo-1606755962773-61ec6c2ac77b') no-repeat center/cover;
+        url('https://images.unsplash.com/photo-1606755962773-61ec6c2ac77b?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
       text-align: center;
       padding: 6rem 1rem;
       color: white;
@@ -209,9 +209,9 @@
   </section>
 
   <section class="carousel" id="carousel">
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" class="active" alt="Classic Banana Bread">
-    <img src="https://images.unsplash.com/photo-1598373182133-36ce0c69c729" alt="Walnut Banana Bread">
-    <img src="https://images.unsplash.com/photo-1606755962773-61ec6c2ac77b" alt="Banana Bread Slices">
+    <img src="https://images.unsplash.com/photo-1613145993481-10b4fd345946?auto=format&fit=crop&w=800&q=80" class="active" alt="Classic Banana Bread">
+    <img src="https://images.unsplash.com/photo-1617135407947-5c5c6676dc33?auto=format&fit=crop&w=800&q=80" alt="Walnut Banana Bread">
+    <img src="https://images.unsplash.com/photo-1627494654244-5135e2e6f4d5?auto=format&fit=crop&w=800&q=80" alt="Banana Bread Slice">
 
     <div class="carousel-controls">
       <button onclick="prevSlide()">‹ Prev</button>
@@ -220,7 +220,7 @@
   </section>
 
   <section id="product" class="product">
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Banana Bread Loaf">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Banana Bread Loaf">
     <div class="product-details">
       <h2>Our Signature Bread</h2>
       <p>Moist, fluffy, and full of flavor. Our banana bread is baked fresh daily using farm-fresh ingredients.</p>
@@ -247,7 +247,7 @@
       <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p id="formMsg" style="margin-top: 1rem; color: green;"></p>
+    <p id="formMsg" style="margin-top: 1rem;"></p>
   </section>
 
   <footer>
@@ -301,7 +301,6 @@
       showSlide(index);
     }
 
-    // Auto slide every 5 seconds
     setInterval(nextSlide, 5000);
   </script>
 </body>
